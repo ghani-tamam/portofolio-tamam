@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MIRAE website design project by Tamam.">
+  <title>MIRAE | Tamam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-detail-page" data-theme="dark">
+  <header class="site-header detail-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="all-projects.html" aria-label="Back to Tamam home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+        <span>TAMAM</span>
+      </a>
+      <div class="nav-actions">
+        <button class="button button-small theme-toggle" type="button" aria-label="Aktifkan mode terang" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">☼</span>
+        </button>
+        <a class="text-link" href="index.html#work">Back to portfolio <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="project-detail-hero">
+      <div class="container">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Selected project / 04</p>
+        <h1>Open Recruitment <em> Itec</em></h1>
+        <p class="project-detail-intro">A visual web experience celebrating the architecture, culture, and global spirit of the United Arab Emirates.</p>
+        <div class="project-detail-image"><img src="frame 14.png" alt="Open Recruitment Itec graphic design"></div>
+      </div>
+    </section>
+    <section class="project-detail-info section">
+      <div class="container detail-info-grid">
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> The project</p><h2>Designed to feel <em>bold</em> and alive.</h2></div>
+        <div><p class="section-copy">MIRAE is a destination-focused website concept built around a strong editorial image, clear navigation, and a confident visual rhythm. The layout makes the UAE the first thing visitors feel.</p><a class="button" href="index.html#contact">MIRAE DESIGN <span aria-hidden="true">&#8599;</span></a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><span>&copy; 2024 Tamam Studio</span><a href="index.html#home">Back to top &#8593;</a></div></footer>
+  <script>
+    const themeToggle = document.querySelector(".theme-toggle");
+    const savedTheme = localStorage.getItem("tamam-theme");
+
+    const setTheme = (theme) => {
+      const isLight = theme === "light";
+      document.body.dataset.theme = theme;
+      themeToggle.setAttribute("aria-pressed", String(isLight));
+      themeToggle.setAttribute("aria-label", `Aktifkan mode ${isLight ? "gelap" : "terang"}`);
+      themeToggle.querySelector(".theme-toggle-icon").textContent = isLight ? "☾" : "☼";
+    };
+
+    if (savedTheme === "light" || savedTheme === "dark") {
+      setTheme(savedTheme);
+    } else {
+      setTheme("dark");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
+      setTheme(nextTheme);
+      localStorage.setItem("tamam-theme", nextTheme);
+    });
+  </script>
+</body>
+</html>
