@@ -1485,6 +1485,10 @@ h2 {
     grid-template-columns: 1fr;
     gap: 70px;
   }
+  .about .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 55px;
+  }
   .hero-copy {
     text-align: center;
   }
@@ -1598,27 +1602,27 @@ h2 {
   }
   .nav-wrap {
     gap: 12px;
-    padding-right: 14px;
-    padding-left: 14px;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 10px 14px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
   .site-header:not(.detail-header) .nav-wrap {
     display: flex;
-    justify-content: center;
-  }
-  .nav-actions {
-    gap: 12px;
-    width: 100%;
     justify-content: space-between;
   }
+  .nav-actions {
+    gap: 8px;
+    width: auto;
+    flex: 0 0 auto;
+  }
   .site-header .theme-toggle {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
   }
   .brand {
-    flex: 1 1 auto;
-    justify-content: center;
+    flex: 0 1 auto;
+    justify-content: flex-start;
   }
   .hero {
     min-height: auto;
@@ -1665,10 +1669,26 @@ h2 {
     height: auto;
     max-width: 360px;
   }
+  .about .about-visual {
+    width: 100%;
+    height: auto;
+  }
   .portrait-about {
     width: min(84vw, 275px);
     height: auto;
     aspect-ratio: 0.72;
+  }
+  .about .portrait-about {
+    width: min(84vw, 275px);
+    height: auto;
+    aspect-ratio: 0.72;
+  }
+  .about .about-copy {
+    min-width: 0;
+    text-align: center;
+  }
+  .about .section-copy {
+    margin-inline: auto;
   }
   .about-badge {
     right: 3px;
@@ -1705,7 +1725,12 @@ h2 {
     font-size: 10px;
   }
   .detail-header .nav-wrap {
-    justify-content: center;
+    width: calc(100vw - 20px);
+    justify-content: space-between;
+    padding: 10px 12px;
+  }
+  .detail-header .nav-actions {
+    gap: 6px;
   }
   .project-detail-hero {
     padding: 60px 0 55px;
@@ -1717,14 +1742,14 @@ h2 {
 
 @media (max-width: 360px) {
   .nav-wrap {
-    padding: 12px 12px;
+    padding: 10px 12px;
   }
   .brand {
     font-size: 12px;
     letter-spacing: 0.04em;
   }
   .nav-actions {
-    gap: 8px;
+    gap: 6px;
   }
   .theme-toggle {
     width: 38px;
